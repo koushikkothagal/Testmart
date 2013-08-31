@@ -3,6 +3,9 @@ package org.koushik.javabrains.business;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.koushik.javabrains.model.Product;
+
+
 public class ProductServiceImpl {
 
 	List<String> bookList = new ArrayList<>();
@@ -42,7 +45,8 @@ public class ProductServiceImpl {
 		}
 		return null;
 	}
-
+	
+	
 	public boolean addProduct(String category, String product) {
 		switch (category.toLowerCase()) {
 		case "books":
@@ -59,5 +63,13 @@ public class ProductServiceImpl {
 		}
 		return true;
 	}
+
+	public List<Product> getProductsv2(String category) {
+		List<Product> productList = new ArrayList<>();
+		productList.add(new Product("Java Brains Book", "1234", 999999.99));
+		productList.add(new Product("Another Book", "ABC", 12.50));
+		return productList;
+	}
+
 	
 }
